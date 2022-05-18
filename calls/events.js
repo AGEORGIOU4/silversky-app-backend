@@ -16,7 +16,6 @@ router.use(function (req, res, next) {
 
 
 /*-----------Player------------*/
-
 router.get('/player', (req, res) => {
   Player.findAll()
     .then(player => {
