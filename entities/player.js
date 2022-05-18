@@ -5,18 +5,17 @@ const Player = db.define('Player', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true
   },
   x: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.REAL,
     allowNull: true,
   },
   y: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.REAL,
     allowNull: true,
   },
   z: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.REAL,
     allowNull: true,
   }
 }, {
@@ -28,6 +27,18 @@ async function init() {
   await db.sync();
 }
 
+async function createPlayer() {
+  const count = await Plane.count({});
+
+  console.log(count);
+  if (count === 0) {
+    await Plane.create({ id: 1, x: 1, y: 0, z: 0 });
+  } else {
+    console.log("Player already exist");
+  }
+}
+
 init();
+createPlayer();
 
 module.exports = Player;

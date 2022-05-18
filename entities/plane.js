@@ -19,10 +19,9 @@ async function init() {
   await db.sync();
 }
 
-async function populateDB() {
+async function createPlanes() {
   const count = await Plane.count({});
 
-  console.log(count);
   if (count === 0) {
     await Plane.create({ id: 1, color: "white" });
     await Plane.create({ id: 2, color: "white" });
@@ -33,6 +32,6 @@ async function populateDB() {
 }
 
 init();
-populateDB();
+createPlanes();
 
 module.exports = Plane;
