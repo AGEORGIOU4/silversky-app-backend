@@ -2,7 +2,7 @@
   "name": "nodejs",
   "version": "1.0.0",
   "description": "Website to control unity game",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +13,13 @@
     "express": "^4.18.1",
     "sqlite": "^4.1.1",
     "sqlite3": "^5.0.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasg46/Silversky.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreasg46/Silversky/issues"
+  },
+  "homepage": "https://github.com/andreasg46/Silversky#readme"
 }
